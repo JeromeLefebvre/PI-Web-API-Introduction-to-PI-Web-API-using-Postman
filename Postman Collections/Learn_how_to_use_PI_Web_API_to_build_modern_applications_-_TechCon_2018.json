@@ -1,0 +1,802 @@
+{
+  "variables": [],
+  "info": {
+    "name": "Learn how to use PI Web API to build modern applications - TechCon 2018",
+    "_postman_id": "d3799007-afe1-9e1d-fe09-09db2ee34ab7",
+    "description": "The TechCon 2018 Introductory PI Web API course.\n\nIn this course you will learn the basics of PI Web API. This includes:\n* Making requests to retrieve information about elements and attributes \n* Using rich data access to retrieve historical and current values of tags\n* Using and navigating the documentation for PI Web API\n* Using queries to search for various information\n* Making your queries efficient by retrieving just what you need",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "_postman_id": "329c6995-0931-058d-66ce-704622f48c22",
+      "name": "Solutions",
+      "description": "The solutions to the various excercises. Please verify them whenever you get stuck.",
+      "item": [
+        {
+          "_postman_id": "fa83b7b0-e18f-e963-4a02-fdc9776c9bdb",
+          "name": "1. First PI Web API request, get the list of currently registered PI Data Archives copy",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+              }
+            ],
+            "body": {},
+            "url": "https://devdata.osisoft.com/piwebapi/AssetServers",
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "ce169756-f806-0277-8394-3f4c4aaada94",
+          "name": "2. Get a specific AF Server By using its Path",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "https://devdata.osisoft.com/piwebapi/AssetDatabases?path=\\\\PISRV1\\UCDavisBuildings",
+              "protocol": "https",
+              "host": [
+                "devdata",
+                "osisoft",
+                "com"
+              ],
+              "path": [
+                "piwebapi",
+                "AssetDatabases"
+              ],
+              "query": [
+                {
+                  "key": "path",
+                  "value": "\\\\PISRV1\\UCDavisBuildings",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": [
+            {
+              "id": "e258ddaf-6eea-63e5-5dfb-119cfb9c0e89",
+              "name": "Solution",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+                  }
+                ],
+                "body": {},
+                "url": {
+                  "raw": "https://devdata.osisoft.com/piwebapi/AssetDatabases?path=\\\\PISRV1\\UCDavisBuildings",
+                  "protocol": "https",
+                  "host": [
+                    "devdata",
+                    "osisoft",
+                    "com"
+                  ],
+                  "path": [
+                    "piwebapi",
+                    "AssetDatabases"
+                  ],
+                  "query": [
+                    {
+                      "key": "path",
+                      "value": "\\\\PISRV1\\UCDavisBuildings",
+                      "equals": true
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "_postman_previewtype": "text",
+              "header": [
+                {
+                  "name": "Cache-Control",
+                  "key": "Cache-Control",
+                  "value": "no-cache",
+                  "description": "Tells all caching mechanisms from server to client whether they may cache this object. It is measured in seconds"
+                },
+                {
+                  "name": "Content-Encoding",
+                  "key": "Content-Encoding",
+                  "value": "gzip",
+                  "description": "The type of encoding used on the data."
+                },
+                {
+                  "name": "Content-Length",
+                  "key": "Content-Length",
+                  "value": "446",
+                  "description": "The length of the response body in octets (8-bit bytes)"
+                },
+                {
+                  "name": "Content-Type",
+                  "key": "Content-Type",
+                  "value": "application/json; charset=utf-8",
+                  "description": "The mime type of this content"
+                },
+                {
+                  "name": "Date",
+                  "key": "Date",
+                  "value": "Thu, 01 Jun 2017 01:33:32 GMT",
+                  "description": "The date and time that the message was sent"
+                },
+                {
+                  "name": "Server",
+                  "key": "Server",
+                  "value": "Microsoft-HTTPAPI/2.0",
+                  "description": "A name for the server"
+                }
+              ],
+              "cookie": [],
+              "responseTime": "1036",
+              "body": "{\"WebId\":\"D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M\",\"Id\":\"76765dba-3635-4407-820b-989fd13e7156\",\"Name\":\"UCDavisBuildings\",\"Description\":\"\",\"Path\":\"\\\\\\\\PISRV1\\\\UCDavisBuildings\",\"ExtendedProperties\":{},\"Links\":{\"Self\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M\",\"Elements\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elements\",\"ElementTemplates\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elementtemplates\",\"EventFrames\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/eventframes\",\"AssetServer\":\"https://devdata.osisoft.com/piwebapi/assetservers/S0IRAQC7zjPUOfBqai218IAwUElTUlYx\",\"ElementCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/elementcategories\",\"AttributeCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/attributecategories\",\"TableCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/tablecategories\",\"AnalysisCategories\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/analysiscategories\",\"AnalysisTemplates\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/analysistemplates\",\"EnumerationSets\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/enumerationsets\",\"Tables\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/tables\",\"Security\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/security\",\"SecurityEntries\":\"https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M/securityentries\"}}"
+            }
+          ]
+        },
+        {
+          "_postman_id": "accd1088-1e3f-603b-b834-25f8da231c5f",
+          "name": "3. How to retrieve specific information about an attribute",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "https://devdata.osisoft.com/piwebapi/attributes?path=\\\\PISRV1\\UCDavisBuildings\\Buildings\\Buildings\\Vet Med 3B\\Electricity|Demand_kBtu&selectedFields=Name;Path;Links",
+              "protocol": "https",
+              "host": [
+                "devdata",
+                "osisoft",
+                "com"
+              ],
+              "path": [
+                "piwebapi",
+                "attributes"
+              ],
+              "query": [
+                {
+                  "key": "path",
+                  "value": "\\\\PISRV1\\UCDavisBuildings\\Buildings\\Buildings\\Vet Med 3B\\Electricity|Demand_kBtu"
+                },
+                {
+                  "key": "selectedFields",
+                  "value": "Name;Path;Links"
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "72dcc91e-40c6-5eec-1647-0725dea9a2d9",
+          "name": "4. Rich data access for an attribute",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+              }
+            ],
+            "body": {},
+            "url": {
+              "raw": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/Summary?summaryType=Total&startTime=T-7d&endTime=T&timeZone=Pacific Standard Time&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value",
+              "protocol": "https",
+              "host": [
+                "devdata",
+                "osisoft",
+                "com"
+              ],
+              "path": [
+                "piwebapi",
+                "streams",
+                "A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV",
+                "Summary"
+              ],
+              "query": [
+                {
+                  "key": "summaryType",
+                  "value": "Total",
+                  "equals": true
+                },
+                {
+                  "key": "startTime",
+                  "value": "T-7d",
+                  "equals": true
+                },
+                {
+                  "key": "endTime",
+                  "value": "T",
+                  "equals": true
+                },
+                {
+                  "key": "timeZone",
+                  "value": "Pacific Standard Time",
+                  "equals": true
+                },
+                {
+                  "key": "summaryDuration",
+                  "value": "1d",
+                  "equals": true
+                },
+                {
+                  "key": "selectedFields",
+                  "value": "Items.Value.Timestamp;Items.Value.Value",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "08b169b8-78ab-592d-11a0-b257a930898e",
+          "name": "5. Use a batch request to combine step 3 and 4.",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 207\"] = responseCode.code === 207;",
+                  "",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Correctly retrieve the attribute\"] = jsonData.getAttribute.Status === 200;",
+                  "tests[\"Correctly retrieve the data\"] = jsonData.getData.Status === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
+            },
+            "url": "https://devdata.osisoft.com/piwebapi/batch",
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "2f846d4e-674e-a6dd-f41e-45579f4b75e9",
+          "name": "6. Using queries to search for tags",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 200\"] = responseCode.code === 200;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
+            },
+            "url": {
+              "raw": "https://devdata.osisoft.com/piwebapi/search/query?q=pointsource:R&scope=pi:PISRV1&Count=5&Fields=Links",
+              "protocol": "https",
+              "host": [
+                "devdata",
+                "osisoft",
+                "com"
+              ],
+              "path": [
+                "piwebapi",
+                "search",
+                "query"
+              ],
+              "query": [
+                {
+                  "key": "q",
+                  "value": "pointsource:R",
+                  "equals": true
+                },
+                {
+                  "key": "scope",
+                  "value": "pi:PISRV1",
+                  "equals": true
+                },
+                {
+                  "key": "Count",
+                  "value": "5",
+                  "equals": true
+                },
+                {
+                  "key": "Fields",
+                  "value": "Links",
+                  "equals": true
+                }
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "_postman_id": "18a9e328-9b14-2a7e-d93e-dbb9173befa8",
+          "name": "7. RequestTemplate - Advance batch requests",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "tests[\"Status code is 207\"] = responseCode.code === 207;",
+                  "",
+                  "var jsonData = JSON.parse(responseBody);",
+                  "tests[\"Correctly retrieve the attribute\"] = jsonData.searchTags.Status === 200;",
+                  "tests[\"Correctly retrieve the data\"] = jsonData.getData.Status === 207;"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{  \r\n \"searchTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/search/query?q=pointsource:R&scope=pi:PISRV1&Count=5&Fields=Links\"  \r\n },  \r\n  \"getTags\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}?SelectedFields=Links.Value;Name\"  \r\n   },  \r\n   \"ParentIds\": [\"searchTags\"],  \r\n   \"Parameters\": [\"$.searchTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {\r\n\t\"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}?SelectedFields=Value\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
+            },
+            "url": "https://devdata.osisoft.com/piwebapi/batch",
+            "description": "We can apply the same sub-batch to a list of requests using the RequestTemplate key word.\n\nFrom the docs:\nA request can alternatively specify a request template in place of a resource. In this case, a single JsonPath may select multiple tokens, and a separate subrequest will be made from the template for each token. The responses of these subrequests will returned as the content of a single outer response."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "_postman_id": "4e1217f1-7be9-501c-a9f5-377b13bec384",
+      "name": "0.  Introduction to PI Web API (expand to see description)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {},
+        "url": "https://devdata.osisoft.com/piwebapi/",
+        "description": "**Introduction to PI Web API**\r\n\r\nWelcome to this TechCon course! To complete the exercises, simply go through the requests and then attempt the final exercises. The steps required to be completed are in the description field of each request.\r\n\r\nFeel free to then make use of the solutions located in the folder if you are unsure how to proceed or to compare it against your own solutions.\r\n\r\n**Goal:**\r\nIn this course you will learn the basics of PI Web API. This includes:\r\n\r\n* Making requests to retrieve information about elements and attributes \r\n* Using rich data access to retrieve historical and current values of tags\r\n* Using and navigating the documentation for PI Web API\r\n* Using queries to search for various information\r\n* Making your queries efficient by retrieving just what you need\r\n\r\nThis course won't cover:\r\n\r\n* Configuring a PI Web API instance\r\n \r\n**Syntax notes:**\r\n* Links to external pages are in [orange](https://pisquare.osisoft.com/community/developers-club/restful-pi-system-access).\r\n* Pieces of code or syntax are highlighted by being in a ```grey box```\r\n\r\nIf you face any issue with the training after TechCon 2018, simply post a question on PI Square dedicated subspace for PI Web API: \r\n[RESTful PI System Access](https://pisquare.osisoft.com/community/developers-club/restful-pi-system-access)\r\n\r\n------------------------\r\nIf you are new to PI Web API or want to learn more about this course, please view this video:\r\n[https://youtu.be/ZoD82Zmz3YU](https://youtu.be/ZoD82Zmz3YU)"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "59c13d22-14b0-6769-ec27-d6b4d8ca3f16",
+      "name": "1. Get the list of currently registered PI Data Archives",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "https://devdata.osisoft.com/piwebapi/DataServers/",
+        "description": "This request will return the list of all [PI Data Archives](https://livelibrary.osisoft.com/LiveLibrary/content/en/glossary-v1/GUID-DD3301D8-DB1E-4855-806F-778F19370E98) registered on the PI Web API end point.\r\n\r\n**Exercise**:  \r\n1. To make the request, hit the \"Send\" button.\r\n1. Verify that the return code is of [status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#2xx_Success) \"200 ok\". If you are not familiar with them, read up on them, in particular on the status codes 207 and also 401 and 405.\r\n1. Scroll through the body of the response to see that a name and a collection of links is returned. The format of the response is called [JSON](https://en.wikipedia.org/wiki/JSON).\r\n1. Change the URL so that it returns the list of [AF servers](https://livelibrary.osisoft.com/LiveLibrary/content/en/glossary-v1/GUID-3DD993D4-41AD-421C-A423-42E2AFD95842) registered to the PI Web API Endpoint. \r\nTo do so, you need to edit the word ```DataServers``` to the word ```AssetServers```. Note that there is now a path being returned.\r\nAs the backslash character is used as an escape character in JSON and more generally in JavaScript, there are 4 backslashes included in the path, instead of the expected two. All paths contained in JSON will contain twice as many backslashes as expected.\r\n1. Change the word ```AssetServers``` to ```AssetServer``` to see what error is returned. The error code will be a [client side error code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#4xx_Client_errors) that you have certainly seen before.\r\n\r\nNothing too hard here, but with the following exercises, if you get stuck look at the corresponding solution for hints as to what needed to be done."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "2eb40424-84f0-8849-5b17-ad817420254f",
+      "name": "2 a. Access the PI Web API's homepage",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "https://devdata.osisoft.com/piwebapi/AssetServers",
+        "description": "PI Web API can be accessed in two similar, but fundamentally different, ways. One as an \"[API](https://en.wikipedia.org/wiki/Application_programming_interface)\", that is as something accepts requests and returns data, the other as a \"[service](https://en.wikipedia.org/wiki/Server_(computing))\" that can be used interactively. The service approach is particularly helpful when you want to quickly browse around what is available within PI Web API, and more importantly, when you want to view the help file.\r\n\r\nTo access PI Web API as a service, you simply need to open <https://devdata.osisoft.com/piwebapi/> in your favorite browser and enter the credentials below. The page you have just opened is commonly called the \"PI Web API's Homepage\".\r\n\r\nUsername: ```webapiuser```\r\n\r\nPassword: ```!try3.14webapi!```\r\n\r\n**Exercise**:\r\n1. Open the the [PI Web API Homepage](https://devdata.osisoft.com/piwebapi/) in your favorite browser and enter the credentials above.\r\n1. We will not go into the details of the authentication for this training, but for this training we are using [basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication). In other words, with each single request we are sending a username and password to PI Web API service (as we are also using https, this information is encrypted before being sent). To see this, expand the ```Headers``` tab within Postman and look at the ```Authorization``` key. The value is the username and password encoded in [Base64](https://en.wikipedia.org/wiki/Base64), to view it in a human-readable style we can use [ACM's REST API](https://helloacm.com/api/base64-decode/?s=d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=).\r\n2. In the previous Exercise, we noticed information regarding a PI Data Archive and AF Server included several links. When you are using PI Web API as a service, you are able to click on the various links to clickly navigate around. This the general principle of being  \"[Navigable by links](https://devdata.osisoft.com/piwebapi/help/getting-started)\" that PI Web API follows."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "1a785944-5d78-3a4f-1c9c-1a299d5f959c",
+      "name": "2 b. Get a specific AF Database by using its path",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 404\"] = responseCode.code === 404;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": ""
+        },
+        "url": "https://devdata.osisoft.com/piwebapi/AssetDatabases",
+        "description": "Most objects, such as elements, attributes, and databases, are accessible via their paths. For tags, the path will be made up of the PI server host name and the tag name, for attribute and elements, it will be the AF server name along with the information about where the object sits in the hiearchy.\r\n\r\n**Exercise**:\r\n1. In your browser from the PI Web API's homepage, click to the link next to \"AssetServers\". This is the URL we opened at the end of exercise\r\n2. Further click on the link next to \"Databases\" to see a list of all databases on that AF Server. (Feel free to further click around to see what else is available!)\r\n3. We are particularly interested in the database of [\"UC Davis\"](https://www.ucdavis.edu/) called [\"UCDavisBuildings\"](https://devdata.osisoft.com/piwebapi/assetdatabases/D0IRAQC7zjPUOfBqai218IAwul12djU2B0SCC5if0T5xVgUElTUlYxXFVDREFWSVNCVUlMRElOR1M). Scroll down until you find this database and then click on link next to \"Self\".\r\n4. Aside from having interactive links, accessing PI Web API as a service creates a set of links to the help documentation. Those links are located at the top of the page, click on the help page for \"AssetDatabase\". You can see the names of all the actions (i.e. methods) available to for the AssetDatabase's controller. The terms \"controllers\" and \"action\" are frequently used in Rest APIs, the usage in PI Web API follows the [convention of ASP.net](https://msdn.microsoft.com/en-us/library/dd410269(v=vs.98).aspx).\r\n5. Click on the [GetByPath](https://devdata.osisoft.com/piwebapi/help/controllers/assetserver/actions/getbypath) action.\r\n6. Here, you can see that to specify the path of the database we are interested in, we need to use a \"URL Parameter\". To see the format of this parameter, open the [\"Path Syntax\"](https://devdata.osisoft.com/piwebapi/help/topics/path-syntax) to skim how a path needs to be written, in particular, see the examples towards the bottom of the page.\r\n7. In Postman, to complete the URL already defined below, click \"Params\" to the right of the URL. In the key enter ```path``` and in the value type in ```\\\\PISRV1\\UCDavisBuildings```. This now allows you to see high level information about this database!\r\n\r\nThe help is also available online on [OSIsoft's LiveLibrary](https://techsupport.osisoft.com/Documentation/PI-Web-API/help/getting-started.html)."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "803c3bb2-6e66-500e-e608-1e4e74bdf779",
+      "name": "3. How to retrieve specific information about an attribute",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {},
+        "url": {
+          "raw": "https://devdata.osisoft.com/piwebapi/attributes?path=\\\\PISRV1\\UCDavisBuildings\\Buildings\\Buildings\\Vet Med 3B\\Electricity|Demand_kBtu&selectedFields=Name",
+          "protocol": "https",
+          "host": [
+            "devdata",
+            "osisoft",
+            "com"
+          ],
+          "path": [
+            "piwebapi",
+            "attributes"
+          ],
+          "query": [
+            {
+              "key": "path",
+              "value": "\\\\PISRV1\\UCDavisBuildings\\Buildings\\Buildings\\Vet Med 3B\\Electricity|Demand_kBtu"
+            },
+            {
+              "key": "selectedFields",
+              "value": "Name"
+            }
+          ]
+        },
+        "description": "Using the URL below, we are retrieving information about an attribute. Click \"Send\" to see that only the name of this attribute is returned.\r\n\r\n**Exercise**:\r\n1. Let's explore the second argument used in the URL. Click on Params and delete the ```selectedFields``` key and re-run the query. To delete the key, hover to the right of the value and a \"x\" will appear.\r\n2. Retrieving all the data can be great in some cases, but to reduce network traffic, we often want to limit what we request from PI Web API. This is the role that the ```selectedFields``` URL argument has. Add back the key ```selectedFields``` with value ```Name```. \r\n3. As we want to retrieve more than just the name, look up the syntax for [```selectedFields```](https://devdata.osisoft.com/piwebapi/help/topics/selected-fields) and see how we can retrieve multiple arguments.\r\n4. Modify the ```selectedFields``` parameter to retrieve both ```Links``` and ```Name``` of the attribute.\r\n\r\nOne reason for using selectedField is to reduce the traffic between the client and the PI Web API service, this will greatly improve the [performance](https://pisquare.osisoft.com/community/all-things-pi/blog/2017/01/07/pi-web-api-getting-multiple-attributes-with-batch-requests) (see the \"How is the performance\" section near the end of the article)."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "ce96da37-ca6c-7f8a-dcb1-a9cc2e2bc464",
+      "name": "4. Rich data access (RDA) for an attribute",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {},
+        "url": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/recorded",
+        "description": "In this exercise, we will retrieve various data for an attribute. First, let's look at the documentation on the  [GetRecorded](https://devdata.osisoft.com/piwebapi/help/controllers/stream/actions/getrecorded) action, the action that allows us to retrieve recorded values from a tag or attribute. We can get the required URL for this action, by using the ones provided in the ```Links``` collection of an attribute. In this exercise, we are using links that were accessed in the previous exercise. Rich data access ([RDA](https://pisquare.osisoft.com/community/developers-club/blog/2012/02/10/pi-af-sdk-rich-data-access)) is the term that we commonly use to talk about all the ways data from a tag can be retrieved.\r\n\r\nFirst read over the various available URL parameters. Pay particular attention to the default values (for example, the default start time is \"*-1d\" when written in [PI Time](https://devdata.osisoft.com/piwebapi/help/topics/time-strings))\r\n\r\n**Exercise**:\r\n1. To customize this query, change the default time to one week prior starting from this morning.\r\n2. Also change the endTime to this morning at midnight.\r\n3. Let's now switch from recorded values to [summary values](https://devdata.osisoft.com/piwebapi/help/controllers/stream/actions/getsummary) what needs to be changed? You can retrieve the link from exercise 3 as well.\r\n4. We now have a query that returns to us a single summary for the previous seven days. To get a daily summary, use in the ```summaryDuration``` key and set it to ```1d```.\r\n5. We can also see that the JSON package is quite long. To reduce it, we can use the [selectedFields](https://devdata.osisoft.com/piwebapi/help/topics/selected-fields). Add in a new the ```selectedFields``` Key with value ```Items.Value.Timestamp```. \r\n5. With this request, we are only retrieving the timestamps, change the request to also retrieve the values.\r\n6. In this training, we are using data from the university of [UC Davis](https://www.ucdavis.edu/), which is in California. The PI Web API endpoint is located in the East Coast of the US. Furthermore, you are most probably located in a region with yet another time zone. The timestamps that are retrieved from PI Web API are all in UTC Time by default. To see the timestamps as they originate from the UC Davis campus, we need to add in the ```timeZone``` URL parameter along with the value of ```Pacific Standard Time```. See the [documentation](https://devdata.osisoft.com/piwebapi/help/topics/time-zone) for more details."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "ee0ea2ea-9e57-7006-4d16-25b9c73f9ba5",
+      "name": "5 a. A batch request to combine retrieving data about an attribute and a RDA call",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu\"  \r\n }\r\n}"
+        },
+        "url": "https://devdata.osisoft.com/piwebapi/batch",
+        "description": "It is very common to want the values associated to a certain attribute, but following what we have done so far, we would first have to load up the attribute to retrieve the link for the type of data we are interested in. This would force us to make extra requests against PI Web API. This is such a common scenario, that PI Web API introduced [batch requests](https://devdata.osisoft.com/piwebapi/help/controllers/batch/actions/execute), which allows multiple requests to be collected into a single request.\r\n\r\nFor the previous exercise we used the [Get method](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods), but for batch request we need to use the [Post method](https://en.wikipedia.org/wiki/POST_(HTTP)). The reason being simple, including the information about multiple requests into a single URL would be tremendously impractical. Including multiple request into the body of the POST request is much more sensible. The format of such a request, is of course, in JSON.\r\n\r\nA side benefit of using Batch request is that we can send all requests to the same URL, this can greatly simplify deploying PI Web API.\r\n\r\nThe syntax of batch requests can be a bit complicated, but the idea is that it is a collection of requests that can depend on each other. For each sub-request, there are thus information about the request itself and how this sub-request depends on other sub-requests. Let's look first at the simplest batch request which contains only a single sub-request.\r\n\r\n**Exercise**:\r\n1. Execute the request itself and look at the result and the status code. The status code is now 207, meaning that the response includes multiple statuses and those statuses are found in the body of the response. If you look at the response's body, you should see a status code of 200, which means the one sub-request included in the batch successfully went through.\r\n2. Now let's look deeper in to the request itself, first we notice that that in the body we have a main part called \"getAttribute\" (the name of the sub-request), the http method used, and the resource which is the URL of the sub-request.\r\n3. Edit the URL of the sub-request (not the batch request URL), so that we can retrieve only the SummaryData link."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "945f302d-ec65-062e-a450-33dfdf20b5a7",
+      "name": "5 b. A batch request to combine retrieving data about an attribute and a RDA call",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/Summary?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value\"\r\n }  \r\n}"
+        },
+        "url": "https://devdata.osisoft.com/piwebapi/batch",
+        "description": "We now move on to combining the requests of exercise 3 and 4.\r\n\r\n**Exercise**:\r\n1. Run the query as it is currently defined. Notice that the \"getData\" part of the request is returned first, this is in part due that there are no dependence set up between the two sub-request and thus no natural order for which the data to be returned.\r\n1. We want to specify that the \"getData\" sub-request will depend on the getAttribute sub-requests. To add in a dependence, add in the following after the Resource line of getData.\r\n``` \"ParentIds\": [\"getAttribute\"] ```\r\nOnce you do so, you should see a red X next to the previous line in the JSON editor. This specifies that there is a syntax error in the JSON syntax. The error is that every entry needs to be comma separated. Thus, you need to add in a comma at the end of the \"Resource\" line.\r\n1. Now that the two sub-requests are dependent on each other, we can grab the link that is collected in the getAttribute sub-request and use it in the getData sub-request. To do so we further add in:\r\n``` \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"] ```. The ```$``` is a commonly used variable in JavaScript, in batch requests, it referes to the top level JSON object.\r\n1. We now need to use the link that we have retrieved. To do so, replace the everything before the ```?``` in the URL included in the getData sub-request with simply ```{0}```. ```{0}``` stands for the first parameter in the ```Parameters``` list."
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "c5c271b6-10ec-4f21-a7f5-8d4551f7098e",
+      "name": "6. Using queries to search for tags",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n \"getTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/dataservers/s0W6Wlk0_Utku9vWTvxg45oAUElTUlYx/points?nameFilter=s*&count=10\"  \r\n },  \r\n  \"getDataLinks\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"getDataLinks\"],  \r\n   \"Parameters\": [\"$.getDataLinks.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
+        },
+        "url": {
+          "raw": "https://devdata.osisoft.com/piwebapi/search/query?q=name:s*&scope=pi:PISRV1",
+          "protocol": "https",
+          "host": [
+            "devdata",
+            "osisoft",
+            "com"
+          ],
+          "path": [
+            "piwebapi",
+            "search",
+            "query"
+          ],
+          "query": [
+            {
+              "key": "q",
+              "value": "name:s*",
+              "equals": true
+            },
+            {
+              "key": "scope",
+              "value": "pi:PISRV1",
+              "equals": true
+            }
+          ]
+        },
+        "description": "PI Web API is made of two different services. One service, simply called PI Web API which returns data about attributes, elements, etc. (this is the service weve been interacting so far). The other, called the PI Web API Crawler, creates an index of your PI System. In other words, it creates a small database that contains information regarding tags, elements, etc. You can query this database using a set of filters. Those filters allow you, for example, to get a list of all elements that start with the letter A or all tags with location1=4 and pointType=OPC.\r\n\r\n\r\nLet's look at the example that is already filled in the URL below by hitting the ```Params``` button.\r\nWe see that q (standing in for query) is ```name:s*``` which means, return all everything that starts with the letter \"s\". The \"*\" being a wildcard character.\r\n\r\nThe scope parameter restricts where the data comes from, in this case ```pi:PISRV1```, which filtered all the results to only those that come from the PI Data Archive \"PISRV1\".\r\n\r\nIn other words, we are retrieving all tags that start with the letter \"s\". Hit send to confirm this.\r\n\r\nTo restrict what is being queried further, we can add more fields to our query. For example, we can add another name field to require that we are looking at tags that also end with a \"u\". This is done by simply adding a ```AND``` condition and writing the query as ```name:s* AND name:*u```.\r\n\r\nExercises:\r\n1. Look for all tags that have point source R\r\n2. Return only the first 5 of such tags. (use the [```count```](https://devdata.osisoft.com/piwebapi/help/topics/search-queries) parameter for this)\r\n3. For each tag found, only return the links. (this uses the [```fields```](https://devdata.osisoft.com/piwebapi/help/controllers/search/actions/query) parameters which is more limited than the selectFields parameters we have used so far.)"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "939e08a0-7c60-f4b5-3336-1675d625be03",
+      "name": "7. Advance batch requests",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n \"searchTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/search/query?q=pointsource:R&scope=pi:PISRV1&Count=5&Fields=Links\"  \r\n },  \r\n  \"getTags\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"searchTags\"],  \r\n   \"Parameters\": [\"$.searchTags.Content.Items[*].Links.Self\"]  \r\n  }\r\n}"
+        },
+        "url": "https://devdata.osisoft.com/piwebapi/batch",
+        "description": "In exercise 7, we saw how to retrieve a reference to several different tags in one batch request. Lets assume that our application wants to also retrieve information for those tags. We could do an additional query after getting the tag information, but that would cause more latency for our users. The best solution would be to take advantage of PI Web APIs ability to loop over the results of a sub batch request.\r\n\r\nThis is a two steps process.\r\n1. We must request not a single parameter but a list of parameters\r\n2. We replace the keyword Request by RequestTemplate\r\n\r\n\r\nTo request more information, we simply make more use of JSONPath functionality. One of the more general JSONpath that we use is the following: ```\"$.searchTags.Content.Items[*].Links.Self\"``` The ```*``` stands for the following: ```$.searchTags.Content.Items``` is a list of item, for each of these items return to me ```Links.self```.\r\n\r\nThe change from ```Request``` to ```RequestTemplate``` is trivial.\r\n\r\nHit ```Send``` and examine what is returned with this new request.\r\n\r\nWe will now retrieve the data that would be required to display a PI Chart worth of data.\r\n\r\nExercise:\r\n1. As we have done so far, it is useful to restrict the content that a request. In the RequestTemplate field of ```getTags``` of the request already filled, use selectedFields to only grab the ```Value``` link of each result.\r\n2. We now need to add a new sub-batch request which will access each of those links. The first step is to add a ```getData``` subBatch, as usual it will have ``` \"Method\": \"GET\"```. Add in the ```ParentIds``` of ```searchTags```.\r\n1. The requestTemplate can simply be: ```\"RequestTemplate\": { \"Resource\": \"{0}\" }```. Now the question, what is the ```Parameters``` field?"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "759c04fa-185a-323b-8d86-494536224a5d",
+      "name": "Final exercise",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
+        },
+        "url": "https://devdata.osisoft.com/piwebapi/batch",
+        "description": "You are now ready to move on to the final exercise.\n\nThe final exercise is to... drum roll.. write your own batch request! (I bet you didn't see this coming)\n\nImagine that you would like to retrieve data from PI so that it can be displayed. Depending on what you would like to show, the way you would retrieve data would be quite different.\n\nFor example, the daily summaries we retrieve would fit perfectly well as a bar graph, each bar representing a different day of the week.\n\nHere are some other examples:\n* Pie graph, you would need to retrieve the current value for several tags (which is what we did in exercise 7)\n* Trend, you would need to retreive the historical data (or better the plot data) for an attribute\n* Geo Spacial data, you would retrieve data about elements and special longitude and latitude attributes\n* Gantt chart, you would need to retrieve event frames (We haven't looked into this, but consider it a good challenge to explore this area!)"
+      },
+      "response": []
+    },
+    {
+      "_postman_id": "9526125a-18c4-c232-9cd0-2b65b107fab7",
+      "name": "(Optional)  Display data as bar graph",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData;Name\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
+        },
+        "url": "https://devdata.osisoft.com/piwebapi/batch",
+        "description": "We are now changing gears and looking at a fleshed out example which involves visualization and usage of web technologies. If you have experience with HTML and JavaScript you will certainly enjoin the following, if not pleave view the following two videos:\r\n* [amChart introduction](https://youtu.be/0SVfHM2qe4Y)\r\n* [How to use Postman and amcharts to create data visualization](https://www.youtube.com/watch?v=51JCQnJsRCY).\r\n\r\nLet's examine an [example](https://codepen.io/jerome-lefebvre/pen/XgMrWx?editors=0010) using the [amCharts library](https://www.amcharts.com). Feel free to look around the code and in particular in the JavaScript section, notice that it is made up of three parts.\r\n\r\n* A section to retrieve data from PI Web API\r\n* A method to convert the data coming from PI Web API\r\n* The configuration of the bar graph as a JSON object\r\n\r\nFeel further free to edit the code and test out any ideas you may have. You may want to change the time range used to and see what kind patterns are detectable in the data. As this is facilities data, there are clear daily and weekly patterns to be found.\r\n\r\nNote that we are using the following two libraries for this example.\r\n* jquery: https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\r\n* jsonPath: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/jsonpath/jsonpath-0.8.0.js.txt"
+      },
+      "response": []
+    }
+  ]
+}
