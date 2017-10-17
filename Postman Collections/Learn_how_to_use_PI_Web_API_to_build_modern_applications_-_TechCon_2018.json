@@ -451,12 +451,6 @@
       ]
     },
     {
-      "_postman_id": "c14be86d-530c-8b24-ff02-0a846f00a652",
-      "name": "te",
-      "description": "",
-      "item": []
-    },
-    {
       "_postman_id": "4e1217f1-7be9-501c-a9f5-377b13bec384",
       "name": "0.  Introduction to PI Web API (expand to see description)",
       "request": {
