@@ -470,7 +470,7 @@
     },
     {
       "_postman_id": "032f60d9-0e03-2673-dfaa-bb2fe304be84",
-      "name": "License copy",
+      "name": "Disclaimer",
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/",
         "method": "GET",
@@ -482,7 +482,7 @@
           }
         ],
         "body": {},
-        "description": "Copyright 2017 OSIsoft, LLC.\r\n   Licensed under the Apache License, Version 2.0 (the \"License\");\r\n   you may not use this file except in compliance with the License.\r\n   You may obtain a copy of the License at\r\n       http://www.apache.org/licenses/LICENSE-2.0\r\n   Unless required by applicable law or agreed to in writing, software\r\n   distributed under the License is distributed on an \"AS IS\" BASIS,\r\n   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\r\n   See the License for the specific language governing permissions and\r\n   limitations under the License."
+        "description": "The public PI Web API endpoint is intended for research and development purposes under the terms\r\ndetailed in the PI Developers Club Agreement and PI Square Terms of Use.\r\nAlthough we are planning to continuously support and enhance the public PI Web API endpoint, we\r\ncannot guarantee data quality, availability nor a time period within which issues will be fixed."
       },
       "response": []
     },
