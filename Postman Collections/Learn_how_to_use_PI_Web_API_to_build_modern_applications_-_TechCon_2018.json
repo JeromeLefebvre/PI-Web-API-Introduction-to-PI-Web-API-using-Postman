@@ -469,6 +469,24 @@
       "response": []
     },
     {
+      "_postman_id": "97476956-30ce-30d4-c678-3d6bfb44c9b1",
+      "name": "0.  Introduction to PI Web API (expand to see description) copy",
+      "request": {
+        "url": "https://devdata.osisoft.com/piwebapi/",
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
+            "description": ""
+          }
+        ],
+        "body": {},
+        "description": "**Introduction to PI Web API**\r\n\r\nWelcome to this TechCon course! To complete the exercises, simply go through the requests and then attempt the final exercises. The steps required to be completed are in the description field of each request.\r\n\r\nFeel free to then make use of the solutions located in the folder if you are unsure how to proceed or to compare it against your own solutions.\r\n\r\n**Goal:**\r\nIn this course you will learn the basics of PI Web API. This includes:\r\n\r\n* Making requests to retrieve information about elements and attributes \r\n* Using rich data access to retrieve historical and current values of tags\r\n* Using and navigating the documentation for PI Web API\r\n* Using queries to search for various information\r\n* Making your queries efficient by retrieving just what you need\r\n\r\nThis course won't cover:\r\n\r\n* Configuring a PI Web API instance\r\n \r\n**Syntax notes:**\r\n* Links to external pages are in [orange](https://pisquare.osisoft.com/community/developers-club/restful-pi-system-access).\r\n* Pieces of code or syntax are highlighted by being in a ```grey box```\r\n\r\nIf you face any issue with the training after TechCon 2018, simply post a question on PI Square dedicated subspace for PI Web API: \r\n[RESTful PI System Access](https://pisquare.osisoft.com/community/developers-club/restful-pi-system-access)\r\n\r\n------------------------\r\nIf you are new to PI Web API or want to learn more about this course, please view this video:\r\n[https://youtu.be/ZoD82Zmz3YU](https://youtu.be/ZoD82Zmz3YU)"
+      },
+      "response": []
+    },
+    {
       "_postman_id": "59c13d22-14b0-6769-ec27-d6b4d8ca3f16",
       "name": "1. Get the list of currently registered PI Data Archives",
       "event": [
@@ -804,24 +822,6 @@
           "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData;Name\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
         },
         "description": "We are now changing gears and looking at a fleshed out example which involves visualization and usage of web technologies. If you have experience with HTML and JavaScript you will certainly enjoin the following, if not pleave view the following two videos:\r\n* [amChart introduction](https://youtu.be/0SVfHM2qe4Y)\r\n* [How to use Postman and amcharts to create data visualization](https://www.youtube.com/watch?v=51JCQnJsRCY).\r\n\r\nLet's examine an [example](https://codepen.io/jerome-lefebvre/pen/XgMrWx?editors=0010) using the [amCharts library](https://www.amcharts.com). Feel free to look around the code and in particular in the JavaScript section, notice that it is made up of three parts.\r\n\r\n* A section to retrieve data from PI Web API\r\n* A method to convert the data coming from PI Web API\r\n* The configuration of the bar graph as a JSON object\r\n\r\nFeel further free to edit the code and test out any ideas you may have. You may want to change the time range used to and see what kind patterns are detectable in the data. As this is facilities data, there are clear daily and weekly patterns to be found.\r\n\r\nNote that we are using the following two libraries for this example.\r\n* jquery: https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\r\n* jsonPath: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/jsonpath/jsonpath-0.8.0.js.txt"
-      },
-      "response": []
-    },
-    {
-      "_postman_id": "97476956-30ce-30d4-c678-3d6bfb44c9b1",
-      "name": "0.  Introduction to PI Web API (expand to see description) copy",
-      "request": {
-        "url": "https://devdata.osisoft.com/piwebapi/",
-        "method": "GET",
-        "header": [
-          {
-            "key": "Authorization",
-            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE=",
-            "description": ""
-          }
-        ],
-        "body": {},
-        "description": "**Introduction to PI Web API**\r\n\r\nWelcome to this TechCon course! To complete the exercises, simply go through the requests and then attempt the final exercises. The steps required to be completed are in the description field of each request.\r\n\r\nFeel free to then make use of the solutions located in the folder if you are unsure how to proceed or to compare it against your own solutions.\r\n\r\n**Goal:**\r\nIn this course you will learn the basics of PI Web API. This includes:\r\n\r\n* Making requests to retrieve information about elements and attributes \r\n* Using rich data access to retrieve historical and current values of tags\r\n* Using and navigating the documentation for PI Web API\r\n* Using queries to search for various information\r\n* Making your queries efficient by retrieving just what you need\r\n\r\nThis course won't cover:\r\n\r\n* Configuring a PI Web API instance\r\n \r\n**Syntax notes:**\r\n* Links to external pages are in [orange](https://pisquare.osisoft.com/community/developers-club/restful-pi-system-access).\r\n* Pieces of code or syntax are highlighted by being in a ```grey box```\r\n\r\nIf you face any issue with the training after TechCon 2018, simply post a question on PI Square dedicated subspace for PI Web API: \r\n[RESTful PI System Access](https://pisquare.osisoft.com/community/developers-club/restful-pi-system-access)\r\n\r\n------------------------\r\nIf you are new to PI Web API or want to learn more about this course, please view this video:\r\n[https://youtu.be/ZoD82Zmz3YU](https://youtu.be/ZoD82Zmz3YU)"
       },
       "response": []
     }
