@@ -470,7 +470,7 @@
     },
     {
       "_postman_id": "97476956-30ce-30d4-c678-3d6bfb44c9b1",
-      "name": "0.  Introduction to PI Web API (expand to see description) copy",
+      "name": "License",
       "request": {
         "url": "https://devdata.osisoft.com/piwebapi/",
         "method": "GET",
