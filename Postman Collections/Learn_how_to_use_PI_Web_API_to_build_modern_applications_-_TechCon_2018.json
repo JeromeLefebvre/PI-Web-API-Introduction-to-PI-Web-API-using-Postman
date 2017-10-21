@@ -482,7 +482,7 @@
           }
         ],
         "body": {},
-        "description": "The public PI Web API endpoint is intended for research and development purposes under the terms\r\n\r\ndetailed in the [PI Developers Club Agreement](https://ssoadfsbe.osisoft.com/adfs/ls/) and PI Square Terms of Use.\r\n\r\nAlthough we are planning to continuously support and enhance the public PI Web API endpoint, we\r\n\r\ncannot guarantee data quality, availability nor a time period within which issues will be fixed."
+        "description": "This training uses the PI Web API public endpoint and data provided by the University of UC Davis hosted on the PI Web API public endpoint.\r\n\r\n**Disclaimer**\r\nThe public PI Web API endpoint is intended for research and development purposes under the terms\r\n\r\ndetailed in the [PI Developers Club Agreement](https://ssoadfsbe.osisoft.com/adfs/ls/) and PI Square Terms of Use.\r\n\r\nAlthough we are planning to continuously support and enhance the public PI Web API endpoint, we\r\n\r\ncannot guarantee data quality, availability nor a time period within which issues will be fixed."
       },
       "response": []
     },
