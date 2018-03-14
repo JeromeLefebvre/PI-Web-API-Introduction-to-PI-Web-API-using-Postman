@@ -1,7 +1,7 @@
 {
   "info": {
-    "name": "Learn how to use PI Web API to build modern applications - TechCon 2018",
     "_postman_id": "d3799007-afe1-9e1d-fe09-09db2ee34ab7",
+    "name": "Learn how to use PI Web API to build modern applications - TechCon 2018",
     "description": "The TechCon 2018 Introductory PI Web API course.\n\nIn this course you will learn the basics of PI Web API. This includes:\n* Making requests to retrieve information about elements and attributes \n* Using rich data access to retrieve historical and current values of tags\n* Using and navigating the documentation for PI Web API\n* Using queries to search for various information\n* Making your queries efficient by retrieving just what you need",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
@@ -34,8 +34,7 @@
               }
             ],
             "body": {},
-            "url": "https://devdata.osisoft.com/piwebapi/AssetServers",
-            "description": ""
+            "url": "https://devdata.osisoft.com/piwebapi/AssetServers"
           },
           "response": []
         },
@@ -81,8 +80,7 @@
                   "equals": true
                 }
               ]
-            },
-            "description": ""
+            }
           },
           "response": [
             {
@@ -210,8 +208,7 @@
                   "value": "Name;Path;Links"
                 }
               ]
-            },
-            "description": ""
+            }
           },
           "response": []
         },
@@ -284,8 +281,7 @@
                   "equals": true
                 }
               ]
-            },
-            "description": ""
+            }
           },
           "response": []
         },
@@ -323,8 +319,7 @@
               "mode": "raw",
               "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"{0}?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value&TimeZone=Pacific Standard Time\",  \r\n  \"ParentIds\": [\"getAttribute\"],  \r\n  \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"]  \r\n }  \r\n}"
             },
-            "url": "https://devdata.osisoft.com/piwebapi/batch",
-            "description": ""
+            "url": "https://devdata.osisoft.com/piwebapi/batch"
           },
           "response": []
         },
@@ -393,8 +388,7 @@
                   "equals": true
                 }
               ]
-            },
-            "description": ""
+            }
           },
           "response": []
         },
@@ -629,7 +623,7 @@
             }
           ]
         },
-        "description": "Using the URL below, we are retrieving information about an attribute. Click \"Send\" to see that only the name of this attribute is returned.\r\n\r\n**Exercise**:\r\n1. Let's explore the second argument used in the URL. Click on Params and delete the ```selectedFields``` key and re-run the query. To delete the key, hover to the right of the value and a \"x\" will appear.\r\n2. Retrieving all the data can be great in some cases, but to reduce network traffic, we often want to limit what we request from PI Web API. This is the role that the ```selectedFields``` URL argument has. Add back the key ```selectedFields``` with value ```Name```. \r\n3. As we want to retrieve more than just the name, look up the syntax for [```selectedFields```](https://devdata.osisoft.com/piwebapi/help/topics/selected-fields) and see how we can retrieve multiple arguments.\r\n4. Modify the ```selectedFields``` parameter to retrieve both ```Links``` and ```Name``` of the attribute.\r\n\r\nOne reason for using selectedField is to reduce the traffic between the client and the PI Web API service, this will greatly improve the [performance](https://pisquare.osisoft.com/community/all-things-pi/blog/2017/01/07/pi-web-api-getting-multiple-attributes-with-batch-requests) (see the \"How is the performance\" section near the end of the article)."
+        "description": "Using the URL below, we are retrieving information about an attribute. Click \"Send\" to see that only the name of this attribute is returned.\r\n\r\n**Exercise**:\r\n1. Let's explore the second argument used in the URL. Click on \u201cParams\u201d and delete the ```selectedFields``` key and re-run the query. To delete the key, hover to the right of the value and a \"x\" will appear.\r\n2. Retrieving all the data can be great in some cases, but to reduce network traffic, we often want to limit what we request from PI Web API. This is the role that the ```selectedFields``` URL argument has. Add back the key ```selectedFields``` with value ```Name```. \r\n3. As we want to retrieve more than just the name, look up the syntax for [```selectedFields```](https://devdata.osisoft.com/piwebapi/help/topics/selected-fields) and see how we can retrieve multiple arguments.\r\n4. Modify the ```selectedFields``` parameter to retrieve both ```Links``` and ```Name``` of the attribute.\r\n\r\nOne reason for using selectedField is to reduce the traffic between the client and the PI Web API service, this will greatly improve the [performance](https://pisquare.osisoft.com/community/all-things-pi/blog/2017/01/07/pi-web-api-getting-multiple-attributes-with-batch-requests) (see the \"How is the performance\" section near the end of the article)."
       },
       "response": []
     },
@@ -694,7 +688,7 @@
           "raw": "{  \r\n \"getAttribute\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.SummaryData\"  \r\n },  \r\n \"getData\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/Summary?StartTime=T-7d&EndTime=T&summaryDuration=1d&selectedFields=Items.Value.Timestamp;Items.Value.Value\"\r\n }  \r\n}"
         },
         "url": "https://devdata.osisoft.com/piwebapi/batch",
-        "description": "We now move on to combining the requests of exercise 3 and 4.\r\n\r\n**Exercise**:\r\n1. Run the query as it is currently defined. Notice that the \"getData\" part of the request is returned first, this is in part due that there are no dependence set up between the two sub-request and thus no natural order for which the data to be returned.\r\n1. We want to specify that the \"getData\" sub-request will depend on the getAttribute sub-requests. To add in a dependence, add in the following after the Resource line of getData.\r\n``` \"ParentIds\": [\"getAttribute\"] ```\r\nOnce you do so, you should see a red X next to the previous line in the JSON editor. This specifies that there is a syntax error in the JSON syntax. The error is that every entry needs to be comma separated. Thus, you need to add in a comma at the end of the \"Resource\" line.\r\n1. Now that the two sub-requests are dependent on each other, we can grab the link that is collected in the getAttribute sub-request and use it in the getData sub-request. To do so we further add in:\r\n``` \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"] ```. The ```$``` is a commonly used variable in JavaScript, in batch requests, it referes to the top level JSON object.\r\n1. We now need to use the link that we have retrieved. To do so, replace the everything before the ```?``` in the URL included in the getData sub-request with simply ```{0}```. ```{0}``` stands for the first parameter in the ```Parameters``` list."
+        "description": "We now move on to combining the requests of exercise 3 and 4.\r\n\r\n**Exercise**:\r\n1. Run the query as it is currently defined. Notice that the \"getData\" part of the request is returned first, this is in part due that there are no dependence set up between the two sub-request and thus no natural order for which the data to be returned.\r\n1. We want to specify that the \"getData\" sub-request will depend on the \u201cgetAttribute\u201d sub-requests. To add in a dependence, add in the following after the Resource line of \u201cgetData\u201d.\r\n``` \"ParentIds\": [\"getAttribute\"] ```\r\nOnce you do so, you should see a red X next to the previous line in the JSON editor. This specifies that there is a syntax error in the JSON syntax. The error is that every entry needs to be comma separated. Thus, you need to add in a comma at the end of the \"Resource\" line.\r\n1. Now that the two sub-requests are dependent on each other, we can grab the link that is collected in the \u201cgetAttribute\u201c sub-request and use it in the \u201cgetData\u201d sub-request. To do so we further add in:\r\n``` \"Parameters\": [\"$.getAttribute.Content.Links.SummaryData\"] ```. The ```$``` is a commonly used variable in JavaScript, in batch requests, it referes to the top level JSON object.\r\n1. We now need to use the link that we have retrieved. To do so, replace the everything before the ```?``` in the URL included in the getData sub-request with simply ```{0}```. ```{0}``` stands for the first parameter in the ```Parameters``` list."
       },
       "response": []
     },
@@ -754,7 +748,7 @@
             }
           ]
         },
-        "description": "PI Web API is made of two different services. One service, simply called PI Web API which returns data about attributes, elements, etc. (this is the service weve been interacting so far). The other, called the PI Web API Crawler, creates an index of your PI System. In other words, it creates a small database that contains information regarding tags, elements, etc. You can query this database using a set of filters. Those filters allow you, for example, to get a list of all elements that start with the letter A or all tags with location1=4 and pointType=OPC.\r\n\r\n\r\nLet's look at the example that is already filled in the URL below by hitting the ```Params``` button.\r\nWe see that q (standing in for query) is ```name:s*``` which means, return all everything that starts with the letter \"s\". The \"*\" being a wildcard character.\r\n\r\nThe scope parameter restricts where the data comes from, in this case ```pi:PISRV1```, which filtered all the results to only those that come from the PI Data Archive \"PISRV1\".\r\n\r\nIn other words, we are retrieving all tags that start with the letter \"s\". Hit send to confirm this.\r\n\r\nTo restrict what is being queried further, we can add more fields to our query. For example, we can add another name field to require that we are looking at tags that also end with a \"u\". This is done by simply adding a ```AND``` condition and writing the query as ```name:s* AND name:*u```.\r\n\r\nExercises:\r\n1. Look for all tags that have point source R\r\n2. Return only the first 5 of such tags. (use the [```count```](https://devdata.osisoft.com/piwebapi/help/topics/search-queries) parameter for this)\r\n3. For each tag found, only return the links. (this uses the [```fields```](https://devdata.osisoft.com/piwebapi/help/controllers/search/actions/query) parameters which is more limited than the selectFields parameters we have used so far.)"
+        "description": "PI Web API is made of two different services. One service, simply called PI Web API which returns data about attributes, elements, etc. (this is the service we\u2019ve been interacting so far). The other, called the PI Web API Crawler, creates an index of your PI System. In other words, it creates a small database that contains information regarding tags, elements, etc. You can query this database using a set of filters. Those filters allow you, for example, to get a list of all elements that start with the letter A or all tags with location1=4 and pointType=OPC.\r\n\r\n\r\nLet's look at the example that is already filled in the URL below by hitting the ```Params``` button.\r\nWe see that q (standing in for query) is ```name:s*``` which means, return all everything that starts with the letter \"s\". The \"*\" being a wildcard character.\r\n\r\nThe scope parameter restricts where the data comes from, in this case ```pi:PISRV1```, which filtered all the results to only those that come from the PI Data Archive \"PISRV1\".\r\n\r\nIn other words, we are retrieving all tags that start with the letter \"s\". Hit send to confirm this.\r\n\r\nTo restrict what is being queried further, we can add more fields to our query. For example, we can add another name field to require that we are looking at tags that also end with a \"u\". This is done by simply adding a ```AND``` condition and writing the query as ```name:s* AND name:*u```.\r\n\r\nExercises:\r\n1. Look for all tags that have point source R\r\n2. Return only the first 5 of such tags. (use the [```count```](https://devdata.osisoft.com/piwebapi/help/topics/search-queries) parameter for this)\r\n3. For each tag found, only return the links. (this uses the [```fields```](https://devdata.osisoft.com/piwebapi/help/controllers/search/actions/query) parameters which is more limited than the selectFields parameters we have used so far.)"
       },
       "response": []
     },
@@ -778,7 +772,7 @@
           "raw": "{  \r\n \"searchTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/search/query?q=pointsource:R&scope=pi:PISRV1&Count=5&Fields=Links\"  \r\n },  \r\n  \"getTags\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}\"  \r\n   },  \r\n   \"ParentIds\": [\"searchTags\"],  \r\n   \"Parameters\": [\"$.searchTags.Content.Items[*].Links.Self\"]  \r\n  }\r\n}"
         },
         "url": "https://devdata.osisoft.com/piwebapi/batch",
-        "description": "In exercise 7, we saw how to retrieve a reference to several different tags in one batch request. Lets assume that our application wants to also retrieve information for those tags. We could do an additional query after getting the tag information, but that would cause more latency for our users. The best solution would be to take advantage of PI Web APIs ability to loop over the results of a sub batch request.\r\n\r\nThis is a two steps process.\r\n1. We must request not a single parameter but a list of parameters\r\n2. We replace the keyword Request by RequestTemplate\r\n\r\n\r\nTo request more information, we simply make more use of JSONPath functionality. One of the more general JSONpath that we use is the following: ```\"$.searchTags.Content.Items[*].Links.Self\"``` The ```*``` stands for the following: ```$.searchTags.Content.Items``` is a list of item, for each of these items return to me ```Links.self```.\r\n\r\nThe change from ```Request``` to ```RequestTemplate``` is trivial.\r\n\r\nHit ```Send``` and examine what is returned with this new request.\r\n\r\nWe will now retrieve the data that would be required to display a PI Chart worth of data.\r\n\r\nExercise:\r\n1. As we have done so far, it is useful to restrict the content that a request. In the RequestTemplate field of ```getTags``` of the request already filled, use selectedFields to only grab the ```Value``` link of each result.\r\n2. We now need to add a new sub-batch request which will access each of those links. The first step is to add a ```getData``` subBatch, as usual it will have ``` \"Method\": \"GET\"```. Add in the ```ParentIds``` of ```searchTags```.\r\n1. The requestTemplate can simply be: ```\"RequestTemplate\": { \"Resource\": \"{0}\" }```. Now the question, what is the ```Parameters``` field?"
+        "description": "In exercise 7, we saw how to retrieve a reference to several different tags in one batch request. Let\u2019s assume that our application wants to also retrieve information for those tags. We could do an additional query after getting the tag information, but that would cause more latency for our users. The best solution would be to take advantage of PI Web API\u2019s ability to loop over the results of a sub batch request.\r\n\r\nThis is a two steps process.\r\n1. We must request not a single parameter but a list of parameters\r\n2. We replace the keyword Request by RequestTemplate\r\n\r\n\r\nTo request more information, we simply make more use of JSONPath functionality. One of the more general JSONpath that we use is the following: ```\"$.searchTags.Content.Items[*].Links.Self\"``` The ```*``` stands for the following: ```$.searchTags.Content.Items``` is a list of item, for each of these items return to me ```Links.self```.\r\n\r\nThe change from ```Request``` to ```RequestTemplate``` is trivial.\r\n\r\nHit ```Send``` and examine what is returned with this new request.\r\n\r\nWe will now retrieve the data that would be required to display a PI Chart worth of data.\r\n\r\nExercise:\r\n1. As we have done so far, it is useful to restrict the content that a request. In the RequestTemplate field of ```getTags``` of the request already filled, use selectedFields to only grab the ```Value``` link of each result.\r\n2. We now need to add a new sub-batch request which will access each of those links. The first step is to add a ```getData``` subBatch, as usual it will have ``` \"Method\": \"GET\"```. Add in the ```ParentIds``` of ```searchTags```.\r\n1. The requestTemplate can simply be: ```\"RequestTemplate\": { \"Resource\": \"{0}\" }```. Now the question, what is the ```Parameters``` field?"
       },
       "response": []
     },
