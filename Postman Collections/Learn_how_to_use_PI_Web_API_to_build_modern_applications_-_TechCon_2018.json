@@ -463,7 +463,7 @@
         ],
         "body": {},
         "url": "https://devdata.osisoft.com/piwebapi/",
-        "description": "This training uses the Public PI Web API Endpoint and which hosts data provided by the [University of UC Davis](https://www.ucdavis.edu/).\r\n\r\n**Disclaimer:**\r\nThe Public PI Web API Endpoint is intended for research and development purposes under the terms\r\n\r\ndetailed in the [PI Developers Club Agreement](https://ssoadfsbe.osisoft.com/adfs/ls/) and [PI Square Terms of Use](https://pisquare.osisoft.com/docs/DOC-1106).\r\n\r\nAlthough we are planning to continuously support and enhance the public PI Web API endpoint, we\r\n\r\ncannot guarantee data quality, availability nor a time period within which issues will be fixed."
+        "description": "This training uses the [Public PI Web API Endpoint](https://pisquare.osisoft.com/docs/DOC-2653-going-live-public-pi-web-api-endpoint) and which hosts data provided by the [University of UC Davis](https://www.ucdavis.edu/).\r\n\r\n**Disclaimer:**\r\nThe Public PI Web API Endpoint is intended for research and development purposes under the terms\r\n\r\ndetailed in the [PI Developers Club Agreement](https://ssoadfsbe.osisoft.com/adfs/ls/) and [PI Square Terms of Use](https://pisquare.osisoft.com/docs/DOC-1106).\r\n\r\nAlthough we are planning to continuously support and enhance the public PI Web API endpoint, we\r\n\r\ncannot guarantee data quality, availability nor a time period within which issues will be fixed."
       },
       "response": []
     },
