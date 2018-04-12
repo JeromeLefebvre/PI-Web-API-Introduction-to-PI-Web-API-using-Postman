@@ -846,6 +846,75 @@
         "description": "We are now changing gears and looking at a fleshed out example which involves visualization and usage of web technologies. If you have experience with HTML and JavaScript you will certainly enjoin the following, if not pleave view the following two videos:\r\n* [amChart introduction](https://youtu.be/0SVfHM2qe4Y)\r\n* [How to use Postman and amcharts to create data visualization](https://www.youtube.com/watch?v=51JCQnJsRCY).\r\n\r\nLet's examine an [example](https://codepen.io/jerome-lefebvre/pen/XgMrWx?editors=0010) using the [amCharts library](https://www.amcharts.com). Feel free to look around the code and in particular in the JavaScript section, notice that it is made up of three parts.\r\n\r\n* A section to retrieve data from PI Web API\r\n* A method to convert the data coming from PI Web API\r\n* The configuration of the bar graph as a JSON object\r\n\r\nFeel further free to edit the code and test out any ideas you may have. You may want to change the time range used to and see what kind patterns are detectable in the data. As this is facilities data, there are clear daily and weekly patterns to be found.\r\n\r\nNote that we are using the following two libraries for this example.\r\n* jquery: https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\r\n* jsonPath: https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/jsonpath/jsonpath-0.8.0.js.txt"
       },
       "response": []
+    },
+    {
+      "_postman_id": "fd9e0eda-bfe6-429e-95eb-1974a941de83",
+      "name": "JSONPath Intro",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
+            ]
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+          }
+        ],
+        "body": {},
+        "url": {
+          "raw": "https://devdata.osisoft.com/piwebapi/streams/A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV/Summary?summaryType=Total&startTime=T-7d&endTime=T&timeZone=Pacific Standard Time&summaryDuration=1d",
+          "protocol": "https",
+          "host": [
+            "devdata",
+            "osisoft",
+            "com"
+          ],
+          "path": [
+            "piwebapi",
+            "streams",
+            "A0EIRAQC7zjPUOfBqai218IAwlh-E14LX5hGpQQANOhgILguA8gcpW4d1YOqFJCqZ1dnwUElTUlYxXFVDREFWSVNCVUlMRElOR1NcQlVJTERJTkdTXEJVSUxESU5HU1xWRVQgTUVEIDNCXEVMRUNUUklDSVRZfERFTUFORF9LQlRV",
+            "Summary"
+          ],
+          "query": [
+            {
+              "key": "summaryType",
+              "value": "Total",
+              "equals": true
+            },
+            {
+              "key": "startTime",
+              "value": "T-7d",
+              "equals": true
+            },
+            {
+              "key": "endTime",
+              "value": "T",
+              "equals": true
+            },
+            {
+              "key": "timeZone",
+              "value": "Pacific Standard Time",
+              "equals": true
+            },
+            {
+              "key": "summaryDuration",
+              "value": "1d",
+              "equals": true
+            }
+          ]
+        },
+        "description": "We will be using more advance concepts of JSON, this is background information that you may be useful to you.\n\nIn a JSON object, within the same level, i.e. within the same ``{}``, every key is unique. This has allows for the creation of standards for specifying subsets of a JSON object. In PI Web API, we use the [JSONPath](http://goessner.net/articles/JsonPath/index.html#e2) notation to specify such subsets by writing down their paths.\n\nLet's practice by writing down a few paths.\n\n1. Run the request below and copy the content by using the copy button near the top right corner of the response body.\n1. Open [http://jsonpath.com/](http://jsonpath.com/) and paste in the content in the left panel.\n2. In the JSONPath Syntax box, type in ``$``. Notice that the whole content shows up on the right pane. This is because ``$`` is a shortcut for the whole of JSON object.\n3. To grab the content of the ``Items`` array, type in: ``$.Items``.\n4. To grab the content of the first item, type in ``$.Items[0]``.\n5. To grab the timestamp of this in this item, type in: ``$.Items[0].Value.Timestamp``\n6. To grab all timestamps in this JSON object, type in ``$.Items[*].Value.Timestamp``. In JSONPath, ``*`` grab the same thing for all items in an array."
+      },
+      "response": []
     }
   ]
 }
