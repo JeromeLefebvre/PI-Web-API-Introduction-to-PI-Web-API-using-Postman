@@ -430,6 +430,29 @@
             "description": "We can apply the same sub-batch to a list of requests using the RequestTemplate key word.\n\nFrom the docs:\nA request can alternatively specify a request template in place of a resource. In this case, a single JsonPath may select multiple tokens, and a separate subrequest will be made from the template for each token. The responses of these subrequests will returned as the content of a single outer response."
           },
           "response": []
+        },
+        {
+          "_postman_id": "94eb33a5-10a0-42c7-93d9-0addaac3ee83",
+          "name": "Final Exercise",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "Basic d2ViYXBpdXNlcjohdHJ5My4xNHdlYmFwaSE="
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"getAttribute\": {\n\t\t\"Resource\": \"https://devdata.osisoft.com/piwebapi/attributes?path=\\\\\\\\PISRV1\\\\UCDavisBuildings\\\\Buildings\\\\Buildings\\\\Vet Med 3B\\\\Electricity|Demand_kBtu&selectedFields=Links.PlotData\",\n\t\t\"Method\": \"GET\"\n\t},\n\t\"getData\": {\n\t\t\"Resource\": \"{0}?selectedFields=Items.Value;Items.Timestamp&startTime=Y&endTime=T&timeZone=Pacific Standard Time\",\n\t\t\"Method\": \"GET\",\n\t\t\"ParentIds\": [\"getAttribute\"],\n\t\t\"Parameters\": [\"$.getAttribute.Content.Links.PlotData\"]  \n\t}\n}"
+            },
+            "url": "https://devdata.osisoft.com/piwebapi/batch"
+          },
+          "response": []
         }
       ]
     },
