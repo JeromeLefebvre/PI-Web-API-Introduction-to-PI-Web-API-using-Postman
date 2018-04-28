@@ -1,7 +1,7 @@
 {
   "info": {
     "_postman_id": "d3799007-afe1-9e1d-fe09-09db2ee34ab7",
-    "name": "Learn how to use PI Web API to build modern applications - TechCon 2018",
+    "name": "Learn how to use PI Web API to build modern applications v 1.0",
     "description": "The TechCon 2018 Introductory PI Web API course.\n\nIn this course you will learn the basics of PI Web API. This includes:\n* Making requests to retrieve information about elements and attributes \n* Using rich data access to retrieve historical and current values of tags\n* Using and navigating the documentation for PI Web API\n* Using queries to search for various information\n* Making your queries efficient by retrieving just what you need",
     "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
   },
