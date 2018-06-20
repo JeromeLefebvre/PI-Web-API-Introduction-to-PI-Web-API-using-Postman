@@ -400,13 +400,10 @@
             {
               "listen": "test",
               "script": {
+                "id": "77d56507-c44f-474d-a55f-4a97e04f0621",
                 "type": "text/javascript",
                 "exec": [
-                  "tests[\"Status code is 207\"] = responseCode.code === 207;",
-                  "",
-                  "var jsonData = JSON.parse(responseBody);",
-                  "tests[\"Correctly retrieve the attribute\"] = jsonData.searchTags.Status === 200;",
-                  "tests[\"Correctly retrieve the data\"] = jsonData.getData.Status === 207;"
+                  ""
                 ]
               }
             }
@@ -425,7 +422,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{  \r\n \"searchTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/search/query?q=pointsource:R&scope=pi:PISRV1&Count=5&Fields=Links\"  \r\n },  \r\n  \"getTags\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}?SelectedFields=Links.Value;Name\"  \r\n   },  \r\n   \"ParentIds\": [\"searchTags\"],  \r\n   \"Parameters\": [\"$.searchTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {\r\n\t\"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}?SelectedFields=Value\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
+              "raw": "{  \r\n \"searchTags\": {  \r\n  \"Method\": \"GET\",  \r\n  \"Resource\": \"https://devdata.osisoft.com/piwebapi/search/query?q=pointsource:R&scope=pi:PISRV1&Count=5&Fields=Links\"  \r\n },  \r\n  \"getTags\": {  \r\n   \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}?SelectedFields=Links.Value;Name\"  \r\n   },  \r\n   \"ParentIds\": [\"searchTags\"],  \r\n   \"Parameters\": [\"$.searchTags.Content.Items[*].Links.Self\"]  \r\n  },\r\n  \"getData\": {\r\n  \"Method\": \"GET\",  \r\n   \"RequestTemplate\": {  \r\n    \"Resource\": \"{0}?SelectedFields=Value\"  \r\n   },  \r\n   \"ParentIds\": [\"getTags\"],  \r\n   \"Parameters\": [\"$.getTags.Content.Items[*].Content.Links.Value\"]  \r\n  }\r\n}"
             },
             "url": "https://devdata.osisoft.com/piwebapi/batch",
             "description": "We can apply the same sub-batch to a list of requests using the RequestTemplate key word.\n\nFrom the docs:\nA request can alternatively specify a request template in place of a resource. In this case, a single JsonPath may select multiple tokens, and a separate subrequest will be made from the template for each token. The responses of these subrequests will returned as the content of a single outer response."
