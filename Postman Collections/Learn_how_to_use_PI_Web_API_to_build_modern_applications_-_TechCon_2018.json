@@ -514,13 +514,10 @@
         {
           "listen": "test",
           "script": {
-            "id": "9895fee9-b479-429f-9c41-7522e320573f",
+            "id": "8299fb84-3972-445f-ba1a-4ad54767e0df",
             "type": "text/javascript",
             "exec": [
-              "tests[\"Status code is 200\"] = responseCode.code === 200;",
-              "",
-              "",
-              ""
+              "tests[\"Status code is 200\"] = responseCode.code === 200;"
             ]
           }
         }
